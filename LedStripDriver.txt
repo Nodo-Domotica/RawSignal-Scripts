@@ -1,0 +1,136 @@
+!******************************************************************
+! LED-strip driver 
+!
+! Nodo script voor laden Rawsignals voor een de LED-Stip driver type ???
+!
+! Script versie  : V1.0 P.K.Tonkes 07-03-2015
+! Nodo versie    : 3.8 of hoger
+! Installatie    : Telnet: Start een Telnet sessie en plak dit script in het venster.
+!                  WebApp: Plak de gehele inhoud van dit bestand in een scriptfile via de WebApp. 
+!                  SDCard: Plaats dit bestand in de root-directory van de SDCard  
+!                  
+!                  Uitvoer van dit script neemt enige tijd in beslag
+!                  en hoeft slechts eenmalig plaats te vinden.
+!
+!
+! De LedStrip driver moet eerst de codeset leren. Na inschakelen voedspanning binnen drie
+! seconden de code 'Demo' verzenden. De LedStrip zal kort flitsen ter bevestiging.                                                                             
+! 
+!
+!******************************************************************
+
+RawSignalRepeats 8
+RawSignalDelay 10
+RawSignalSample 100
+
+
+AliasWrite LEDStrip Power=RawSignal 0x312202
+AliasWrite LEDStripSend Power=RawSignalSend 0x312202  
+RawSignalErase 0x312202
+RawSignalPulses 0:500,1500,500,500,500,500,500,1500,500,1500
+RawSignalPulses 10:500,500,500,500,500,500,500,1500,500,500
+RawSignalPulses 20:500,500,500,1500,500,500,500,500,500,500
+RawSignalPulses 30:500,1500,500,500,500,500,500,500,500,500
+RawSignalPulses 40:500,500,500,500,500,500,500,1500,10000,0
+RawSignalWrite 0x312202
+
+
+AliasWrite LEDStrip Mode+=RawSignal 0x31220C
+AliasWrite LEDStripSend Mode+=RawSignalSend 0x31220C 
+RawSignalErase 0x31220C
+RawSignalPulses 0:500,1500,500,500,500,500,500,1500,500,1500
+RawSignalPulses 10:500,500,500,500,500,500,500,1500,500,500
+RawSignalPulses 20:500,500,500,1500,500,500,500,500,500,500
+RawSignalPulses 30:500,1500,500,500,500,500,500,500,500,500
+RawSignalPulses 40:500,500,500,1500,500,1500,500,500,10000,0
+RawSignalWrite 0x31220C
+
+
+AliasWrite LEDStrip Mode-=RawSignal 0x31221C
+AliasWrite LEDStripSend Mode-=RawSignalSend 0x31221C 
+RawSignalErase 0x31221C
+RawSignalPulses 0:500,1500,500,500,500,500,500,1500,500,1500
+RawSignalPulses 10:500,500,500,500,500,500,500,1500,500,500
+RawSignalPulses 20:500,500,500,1500,500,500,500,500,500,500
+RawSignalPulses 30:500,1500,500,500,500,500,500,500,500,500
+RawSignalPulses 40:500,1500,500,1500,500,1500,500,500,10000,0
+RawSignalWrite 0x31221C
+
+
+AliasWrite LEDStrip Bright+=RawSignal 0x31221E
+AliasWrite LEDStripSend Bright+=RawSignalSend 0x31221E  
+RawSignalErase 0x31221E
+RawSignalPulses 0:500,1500,500,500,500,500,500,1500,500,1500
+RawSignalPulses 10:500,500,500,500,500,500,500,1500,500,500
+RawSignalPulses 20:500,500,500,1500,500,500,500,500,500,500
+RawSignalPulses 30:500,1500,500,500,500,500,500,500,500,500
+RawSignalPulses 40:500,1500,500,1500,500,1500,500,1500,10000,0
+RawSignalWrite 0x31221E
+
+
+AliasWrite LEDStrip Bright-=RawSignal 0x312226
+AliasWrite LEDStripSend Bright-=RawSignalSend 0x312226  
+RawSignalErase 0x312226
+RawSignalPulses 0:500,1500,500,500,500,500,500,1500,500,1500
+RawSignalPulses 10:500,500,500,500,500,500,500,1500,500,500
+RawSignalPulses 20:500,500,500,1500,500,500,500,500,500,500
+RawSignalPulses 30:500,1500,500,500,500,500,500,500,500,1500
+RawSignalPulses 40:500,500,500,500,500,1500,500,1500,10000,0
+RawSignalWrite 0x312226
+
+
+AliasWrite LEDStrip Color+=RawSignal 0x31221A
+AliasWrite LEDStripSend Color+=RawSignalSend 0x31221A 
+RawSignalErase 0x31221A
+RawSignalPulses 0:500,1500,500,500,500,500,500,1500,500,1500
+RawSignalPulses 10:500,500,500,500,500,500,500,1500,500,500
+RawSignalPulses 20:500,500,500,1500,500,500,500,500,500,500
+RawSignalPulses 30:500,1500,500,500,500,500,500,500,500,500
+RawSignalPulses 40:500,1500,500,1500,500,500,500,1500,10000,0
+RawSignalWrite 0x31221A
+
+
+AliasWrite LEDStrip Color-=RawSignal 0x312222
+AliasWrite LEDStripSend Color-=RawSignalSend 0x312222 
+RawSignalErase 0x312222
+RawSignalPulses 0:500,1500,500,500,500,500,500,1500,500,1500
+RawSignalPulses 10:500,500,500,500,500,500,500,1500,500,500
+RawSignalPulses 20:500,500,500,1500,500,500,500,500,500,500
+RawSignalPulses 30:500,1500,500,500,500,500,500,500,500,1500
+RawSignalPulses 40:500,500,500,500,500,500,500,1500,10000,0
+RawSignalWrite 0x312222
+
+
+AliasWrite LEDStrip Speed+=RawSignal 0x312216
+AliasWrite LEDStripSend Speed+=RawSignalSend 0x312216 
+RawSignalErase 0x312216
+RawSignalPulses 0:500,1500,500,500,500,500,500,1500,500,1500
+RawSignalPulses 10:500,500,500,500,500,500,500,1500,500,500
+RawSignalPulses 20:500,500,500,1500,500,500,500,500,500,500
+RawSignalPulses 30:500,1500,500,500,500,500,500,500,500,500
+RawSignalPulses 40:500,1500,500,500,500,1500,500,1500,10000,0
+RawSignalWrite 0x312216
+
+
+AliasWrite LEDStrip Speed-=RawSignal 0x312212
+AliasWrite LEDStripSend Speed-=RawSignalSend 0x312212 
+RawSignalErase 0x312212
+RawSignalPulses 0:500,1500,500,500,500,500,500,1500,500,1500
+RawSignalPulses 10:500,500,500,500,500,500,500,1500,500,500
+RawSignalPulses 20:500,500,500,1500,500,500,500,500,500,500
+RawSignalPulses 30:500,1500,500,500,500,500,500,500,500,500
+RawSignalPulses 40:500,1500,500,500,500,500,500,1500,10000,0
+RawSignalWrite 0x312212
+
+
+AliasWrite LEDStrip Demo=RawSignal 0x312214
+AliasWrite LEDStripSend Demo=RawSignalSend 0x312214  
+RawSignalErase 0x312214
+RawSignalPulses 0:500,1500,500,500,500,500,500,1500,500,1500
+RawSignalPulses 10:500,500,500,500,500,500,500,1500,500,500
+RawSignalPulses 20:500,500,500,1500,500,500,500,500,500,500
+RawSignalPulses 30:500,1500,500,500,500,500,500,500,500,500
+RawSignalPulses 40:500,1500,500,500,500,1500,500,500,10000,0
+RawSignalWrite 0x312214
+
+!******************************************************************************!
